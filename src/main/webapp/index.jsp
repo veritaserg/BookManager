@@ -6,7 +6,7 @@
 <body>
 <h3>SkybleSoft presents</h3>
 <br/>
-<a href="/books" target="_blank">Books list</a>
+<a href="books" target="_blank">Books list</a>
 <br/>
 </body>
 </html>
