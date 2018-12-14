@@ -1,12 +1,13 @@
-package main.java.controller;
+package controller;
 
-import main.java.model.Book;
-import main.java.service.BookService;
+
+import model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import service.BookService;
 
 @Controller
 public class BooksController {
@@ -18,9 +19,11 @@ public class BooksController {
         this.bookService = bs;
     }
 
+
+
     @RequestMapping(value = "/books", method = RequestMethod.GET)
     public String listBooks(Model model) {
-        model.addAttribute("book", new Book());
+      model.addAttribute("book", new Book());
         model.addAttribute("listBooks", this.bookService.listBooks());
 
         return "books";

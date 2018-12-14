@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="main.java"/>
+    <context:component-scan base-package="java"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
@@ -17,9 +17,10 @@
           destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url"
-                  value="jdbc:mysql://127.0.0.1:3306/dev"/>
+                  value="jdbc:mysql://127.0.0.1:3306/book"/>
         <property name="username" value="root"/>
         <property name="password" value="1234"/>
+
     </bean>
 
     <!-- Hibernate 4 SessionFactory Bean definition -->
@@ -28,7 +29,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>main.java.model.Book</value>
+                <value>model.Book</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -40,15 +41,15 @@
         </property>
     </bean>
 
-    <bean id="bookDao" class="main.java.dao.BookDaoImpl">
+    <bean id="bookDao" class="dao.BookDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="bookService" class="main.java.service.BookServiceImpl">
+    <bean id="bookService" class="service.BookServiceImpl">
         <property name="bookDao" ref="bookDao"/>
     </bean>
 
-    <context:component-scan base-package="main.java"/>
+    <context:component-scan base-package="java"/>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 

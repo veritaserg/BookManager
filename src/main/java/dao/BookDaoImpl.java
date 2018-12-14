@@ -1,6 +1,6 @@
-package main.java.dao;
+package dao;
 
-import main.java.model.Book;
+import model.Book;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -15,9 +15,8 @@ public class BookDaoImpl implements BookDao {
     private static final Logger logger = LoggerFactory.getLogger(BookDaoImpl.class);
     private SessionFactory sessionFactory;
 
+       public void setSessionFactory(SessionFactory sessionFactory) {
 
-
-    public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 

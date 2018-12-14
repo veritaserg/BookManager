@@ -1,6 +1,6 @@
-package main.java.dao;
+package dao;
+import model.Book;
 
-import main.java.model.Book;
 import java.util.Collection;
 import java.util.List;
 

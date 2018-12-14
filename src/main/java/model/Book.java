@@ -1,20 +1,21 @@
-package main.java.model;
+package model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "BOOKS")
+@Table(name = "books")
 public class Book {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "BOOK_TITLE")
+    @Column(name = "name")
     private String name;
-    @Column(name = "BOOK_AUTHOR")
+    @Column(name = "author")
     private String author;
-    @Column(name = "BOOK_PRICE")
+    @Column(name = "price")
     private int price;
+
 
     public int getId() {
         return id;

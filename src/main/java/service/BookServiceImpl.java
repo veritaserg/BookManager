@@ -1,9 +1,9 @@
-package main.java.service;
+package service;
 
-import main.java.dao.BookDao;
-import main.java.model.Book;
+import dao.BookDao;
+
+import model.Book;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.Collection;
 import java.util.List;
